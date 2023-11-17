@@ -35,9 +35,9 @@
         function exibirValores() {
             // Captura os valores do formulário
             var data = document.getElementById('data').value;
-            var opcoes = document.getElementsByName('opcoes');
-            var cliente = document.getElementById('cliente').value;
-            var campanha = document.getElementById('campanha').value;
+            var opcoes = toUpperCase(document.getElementsByName('opcoes'));
+            var cliente = toUpperCase(document.getElementById('cliente').value);
+            var campanha = toUpperCase(document.getElementById('campanha').value);
 
             // Filtra as opções selecionadas
             var opcoesSelecionadas = Array.from(opcoes)
@@ -45,9 +45,9 @@
                 .map(opcao => opcao.value);
 
             // Constrói a string de resultado
-            var resultado = "(" + data + ")-";
-            resultado += opcoesSelecionadas.join('-') + "-";
-            resultado += cliente + "-";
+            var resultado = data+"_";
+            resultado += opcoesSelecionadas.join('-') + "_";
+            resultado += cliente + "_";
             resultado += campanha;
 
             // Exibe os valores na div

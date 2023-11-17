@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Nome de Campanha</title>
+</head>
+<body>
+<label for="data">Data:</label>
+        <input type="date" id="data" name="data">
+        <br>
+        <input type="checkbox" id="checkBox1" name="checkBox1">
+        <label for="checkBox1">CheckBox1</label>
+        <br>
+        <label for="cliente">Cliente:</label>
+        <input type="text" id="cliente" name="cliente">
+        <br>
+        <label for="campanha">Campanha:</label>
+        <input type="text" id="campanha" name="campanha">
+        <br>
+        <button type="button" onclick="exibirValores()">Enviar</button>
+    </form>
+
+    <div id="resultados"></div>
+
+    <script>
+        function exibirValores() {
+            // Captura os valores do formulário
+            var data = document.getElementById('data').value;
+            var checkBox1 = document.getElementById('checkBox1').checked;
+            var cliente = document.getElementById('cliente').value;
+            var campanha = document.getElementById('campanha').value;
+
+            // Constrói a string de resultado
+            var resultado = "DATA(" + data + ")-";
+            resultado += checkBox1 ? "CheckBox1-" : "";
+            resultado += cliente + "-";
+            resultado += campanha;
+
+            // Exibe os valores na div
+            document.getElementById('resultados').innerHTML = resultado;
+        }
+    </script>
+</body>
+</html>

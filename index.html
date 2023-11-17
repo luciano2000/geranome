@@ -37,7 +37,9 @@
             var data = document.getElementById('data').value;
             var opcoes = document.getElementsByName('opcoes');
             var cliente = document.getElementById('cliente').value.toUpperCase().split(" ").join("");
+            cliente = cliente.split("_").join("")
             var campanha = document.getElementById('campanha').value.toUpperCase().split(" ").join("");
+            campanha = campanha.split("_").join("");
 
             // Filtra as opções selecionadas
             var opcoesSelecionadas = Array.from(opcoes)

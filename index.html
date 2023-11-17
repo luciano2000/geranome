@@ -35,9 +35,9 @@
         function exibirValores() {
             // Captura os valores do formulário
             var data = document.getElementById('data').value;
-            var opcoes = toUpperCase(document.getElementsByName('opcoes'));
-            var cliente = toUpperCase(document.getElementById('cliente').value);
-            var campanha = toUpperCase(document.getElementById('campanha').value);
+            var opcoes = document.getElementsByName('opcoes').toUpperCase();
+            var cliente = document.getElementById('cliente').value.toUpperCase();
+            var campanha = document.getElementById('campanha').value.toUpperCase();
 
             // Filtra as opções selecionadas
             var opcoesSelecionadas = Array.from(opcoes)

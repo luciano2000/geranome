@@ -36,8 +36,8 @@
             // Captura os valores do formulário
             var data = document.getElementById('data').value;
             var opcoes = document.getElementsByName('opcoes');
-            var cliente = document.getElementById('cliente').value.toUpperCase().trim();
-            var campanha = document.getElementById('campanha').value.toUpperCase().trim();
+            var cliente = document.getElementById('cliente').value.toUpperCase().split(" ").join("");
+            var campanha = document.getElementById('campanha').value.toUpperCase().split(" ").join("");
 
             // Filtra as opções selecionadas
             var opcoesSelecionadas = Array.from(opcoes)

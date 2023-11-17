@@ -12,13 +12,13 @@
         <input type="date" id="data" name="data">
         <br>
         <input type="checkbox" id="MG" name="opcoes" value="MG">
-        <label for="checkBox1">MG</label>
+        <label for="MG">MG</label>
         <br>
         <input type="checkbox" id="DF" name="opcoes" value="DF">
-        <label for="checkBox2">DF</label>
+        <label for="DF">DF</label>
         <br>
         <input type="checkbox" id="RJ" name="opcoes" value="RJ">
-        <label for="checkBox3">RJ</label>
+        <label for="RJ">RJ</label>
         <br>
         <label for="cliente">Cliente:</label>
         <input type="text" id="cliente" name="cliente">
@@ -36,10 +36,8 @@
             // Captura os valores do formulário
             var data = document.getElementById('data').value;
             var opcoes = document.getElementsByName('opcoes');
-            var cliente = document.getElementById('cliente').value.trim()
-                cliente = cliente.toUpperCase();
-            var campanha = document.getElementById('campanha').value.trim();
-            campanha = campanha.toUpperCase();
+            var cliente = document.getElementById('cliente').value.toUpperCase().trim();
+            var campanha = document.getElementById('campanha').value.toUpperCase().trim();
 
             // Filtra as opções selecionadas
             var opcoesSelecionadas = Array.from(opcoes)
@@ -47,7 +45,7 @@
                 .map(opcao => opcao.value);
 
             // Constrói a string de resultado
-            var resultado = data+"_";
+            var resultado = data + "_";
             resultado += opcoesSelecionadas.join('-') + "_";
             resultado += cliente + "_";
             resultado += campanha;
